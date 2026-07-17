@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Theory and practice of generative AI — course map</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0B0B14;
+    --bg2:#12121F;
+    --text:#E9E8F2;
+    --text-dim:#9694AC;
+    --purple:#8B82E8; --purple-dim:#3C3489;
+    --teal:#2FC498; --teal-dim:#0F6E56;
+    --coral:#E96B3F; --coral-dim:#993C1D;
+    --pink:#E85D8C; --pink-dim:#993556;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    background-image:radial-gradient(1px 1px at 20% 30%, #ffffff33 1px, transparent 0),
+                      radial-gradient(1px 1px at 60% 70%, #ffffff22 1px, transparent 0),
+                      radial-gradient(1px 1px at 80% 20%, #ffffff2a 1px, transparent 0),
+                      radial-gradient(1px 1px at 40% 85%, #ffffff1f 1px, transparent 0),
+                      radial-gradient(1px 1px at 90% 60%, #ffffff26 1px, transparent 0);
+    background-size:100% 100%;
+    color:var(--text);
+    font-family:'Inter', sans-serif;
+    padding:56px 24px 80px;
+  }
+  .wrap{max-width:1100px; margin:0 auto;}
+  .eyebrow{
+    font-family:'Space Grotesk', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.18em;
+    font-size:12px;
+    color:var(--text-dim);
+    text-align:center;
+    margin-bottom:12px;
+  }
+  h1{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700;
+    font-size:clamp(28px, 4vw, 44px);
+    text-align:center;
+    margin:0 0 8px;
+    letter-spacing:-0.01em;
+  }
+  .sub{
+    text-align:center;
+    color:var(--text-dim);
+    font-size:15px;
+    margin:0 0 56px;
+  }
+  .legend{
+    display:flex; justify-content:center; gap:24px; flex-wrap:wrap;
+    margin-bottom:48px; font-size:12px; color:var(--text-dim);
+  }
+  .legend span{display:inline-flex; align-items:center; gap:6px;}
+  .dot{width:9px; height:9px; border-radius:50%; display:inline-block;}
+  .path{
+    display:flex; flex-wrap:wrap; justify-content:center; align-items:center;
+    gap:6px;
+  }
+  .portal{
+    position:relative;
+    width:128px; height:128px;
+    border-radius:50%;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-decoration:none;
+    color:var(--text);
+    isolation:isolate;
+    flex-shrink:0;
+  }
+  .portal::before{
+    content:"";
+    position:absolute; inset:0;
+    border-radius:50%;
+    background:conic-gradient(from 0deg, var(--c1), var(--c2), var(--c1));
+    opacity:0.85;
+    animation:spin 7s linear infinite;
+    z-index:-2;
+  }
+  .portal::after{
+    content:"";
+    position:absolute; inset:6px;
+    border-radius:50%;
+    background:var(--bg2);
+    z-index:-1;
+  }
+  .portal .num{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700;
+    font-size:20px;
+    line-height:1.1;
+  }
+  .portal .title{
+    font-size:11px;
+    color:var(--text-dim);
+    margin-top:2px;
+    text-align:center;
+    padding:0 12px;
+  }
+  .portal:hover{transform:scale(1.06);}
+  .portal:hover::before{animation-duration:2.5s;}
+  .portal:focus-visible{outline:2px solid var(--text); outline-offset:4px;}
+  .portal.final{width:148px; height:148px;}
+  .portal.final .num{font-size:24px;}
+  .conn{
+    width:34px; height:2px;
+    background:linear-gradient(90deg, var(--text-dim), transparent);
+    flex-shrink:0;
+  }
+  .row-break{flex-basis:100%; height:0;}
+  @media (max-width:760px){
+    .path{gap:16px 6px;}
+    .conn{display:none;}
+    .portal{width:104px; height:104px;}
+    .portal .title{font-size:10px;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .portal::before{animation:none;}
+  }
+  @keyframes spin{to{transform:rotate(360deg);}}
+  footer{
+    text-align:center; color:var(--text-dim); font-size:12px; margin-top:64px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">Fall syllabus</div>
+  <h1>Theory and practice of generative AI</h1>
+  <p class="sub">Twelve universes. One course. Click a portal to enter its module.</p>
+
+  <div class="legend">
+    <span><span class="dot" style="background:var(--purple)"></span>Theory</span>
+    <span><span class="dot" style="background:var(--teal)"></span>Mechanics</span>
+    <span><span class="dot" style="background:var(--coral)"></span>Build & adapt</span>
+    <span><span class="dot" style="background:var(--pink)"></span>Frontier</span>
+  </div>
+
+  <div class="path">
+    <a class="portal" style="--c1:var(--purple-dim); --c2:var(--purple)" href="#module-1-placeholder" data-todo="replace with your website URL for module 1" aria-label="Module 1: theoretical basis">
+      <span class="num">1</span><span class="title">Theory basis</span>
+    </a>
+    <div class="conn"></div>
+    <a class="portal" style="--c1:var(--purple-dim); --c2:var(--purple)" href="#module-2-placeholder" data-todo="replace with your website URL for module 2" aria-label="Module 2: embeddings and tokenization">
+      <span class="num">2</span><span class="title">Embeddings</span>
+    </a>
+    <div class="conn"></div>
+    <a class="portal" style="--c1:var(--purple-dim); --c2:var(--purple)" href="#module-3-placeholder" data-todo="replace with your website URL for module 3" aria-label="Module 3: transformers and attention">
+      <span class="num">3</span><span class="title">Transformers</span>
+    </a>
+    <div class="conn"></div>
+    <a class="portal" style="--c1:var(--teal-dim); --c2:var(--teal)" href="#module-4-placeholder" data-todo="replace with your website URL for module 4" aria-label="Module 4: prompt engineering and sampling">
+      <span class="num">4</span><span class="title">Prompting</span>
+    </a>
+
+    <div class="row-break"></div>
+
+    <a class="portal" style="--c1:var(--teal-dim); --c2:var(--teal)" href="#module-5-placeholder" data-todo="replace with your website URL for module 5" aria-label="Module 5: variational autoencoders">
+      <span class="num">5</span><span class="title">VAE</span>
+    </a>
+    <div class="conn"></div>
+    <a class="portal" style="--c1:var(--teal-dim); --c2:var(--teal)" href="#module-6-placeholder" data-todo="replace with your website URL for module 6" aria-label="Module 6: diffusion models">
+      <span class="num">6</span><span class="title">Diffusion</span>
+    </a>
+    <div class="conn"></div>
+    <a class="portal" style="--c1:var(--coral-dim); --c2:var(--coral)" href="#module-7-placeholder" data-todo="replace with your website URL for module 7" aria-label="Module 7: three ways to use generative AI">
+      <span class="num">7</span><span class="title">Three ways</span>
+    </a>
+    <div class="conn"></div>
+    <a class="portal" style="--c1:var(--coral-dim); --c2:var(--coral)" href="#module-8-placeholder" data-todo="replace with your website URL for module 8" aria-label="Module 8: fine-tuning, LoRA and PEFT">
+      <span class="num">8</span><span class="title">Fine-tuning</span>
+    </a>
+
+    <div class="row-break"></div>
+
+    <a class="portal" style="--c1:var(--coral-dim); --c2:var(--coral)" href="#module-9-placeholder" data-todo="replace with your website URL for module 9" aria-label="Module 9: retrieval augmented generation">
+      <span class="num">9</span><span class="title">RAG</span>
+    </a>
+    <div class="conn"></div>
+    <a class="portal" style="--c1:var(--pink-dim); --c2:var(--pink)" href="#module-10-placeholder" data-todo="replace with your website URL for module 10" aria-label="Module 10: reinforcement learning">
+      <span class="num">10</span><span class="title">RL</span>
+    </a>
+    <div class="conn"></div>
+    <a class="portal" style="--c1:var(--pink-dim); --c2:var(--pink)" href="#module-11-placeholder" data-todo="replace with your website URL for module 11" aria-label="Module 11: evaluation, hallucination, and safety">
+      <span class="num">11</span><span class="title">Eval & safety</span>
+    </a>
+    <div class="conn"></div>
+    <a class="portal final" style="--c1:var(--pink-dim); --c2:var(--pink)" href="#module-12-placeholder" data-todo="replace with your website URL for module 12" aria-label="Module 12: agentic AI, the capstone">
+      <span class="num">12</span><span class="title">Agentic AI</span>
+    </a>
+  </div>
+
+  <footer>Theory and practice of generative AI — Fall syllabus</footer>
+</div>
+</body>
+</html>
